@@ -1,0 +1,30 @@
+name: GitHub Actions Demo
+on:
+  pull_request:
+    types: [closed]
+jobs:
+  Tyk-CICD-Demo:
+    if: github.event.pull_request.merged == true
+    env:
+      dashboard: https://mathematical-creature-adm.aws-use1.cloud-ara.tyk.io
+      dash_key: 2ab3e8d6e6554ccc50e020b3049201e1
+      repo: https://github.com/rewsmith/tyk-github-actions-example.git
+    runs-on: ubuntu-18.04
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: Download Tyk Sync
+        run: |
+          curl -s https://packagecloud.io/install/repositories/tyk/tyk-sync/script.deb.sh | sudo bash
+      - name: Install Tyk Sync
+        run: |
+          sudo apt-get install tyk-sync=1.2.1
+      - name: Run Tyk Sync
+        run: |
+          /opt/tyk-sync/tyk-sync sync -d="$dashboard" -s="$dash_key" $repo
+      - run: echo "🍏 This job's status is ${{ job.status }}."
