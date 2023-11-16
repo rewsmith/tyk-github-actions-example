@@ -6,7 +6,7 @@ jobs:
   Tyk-CICD-Demo:
     if: github.event.pull_request.merged == true
     env:
-      dashboard: https://mathematical-creature-adm.aws-use1.cloud-ara.tyk.io
+      dashboard: https://1067-2a0c-5a82-9203-e900-dba-2e2c-6759-ac85.ngrok-free.app
       dash_key: 2ab3e8d6e6554ccc50e020b3049201e1
       repo: https://github.com/rewsmith/tyk-github-actions-example.git
     runs-on: ubuntu-18.04
