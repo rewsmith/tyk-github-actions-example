@@ -33,6 +33,16 @@ export APIs from a source Tyk Dashboard, e.g. Development
 tyk-sync dump -d="http://localhost:3000" -s="<dashboard-user-api-key>"
 ```
 
+export APIs running tyk-sync in docker
+```
+docker run --rm --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp \
+ tykio/tyk-sync:v1.4.1 \
+ dump \
+ -d="http://host.docker.internal:3000" \
+ -s="<dashboard-user-api-key>" \
+ -t="./tmp"
+```
+
 commit to git and push
 
 ```
