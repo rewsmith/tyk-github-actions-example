@@ -9,7 +9,7 @@ jobs:
       dashboard: https://petite-officer-adm.aws-use1.cloud-ara.tyk.io
       dash_key: a32fe347e32843ad61ab41ef0da21960
       repo: https://github.com/rewsmith/tyk-github-actions-example.git
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
