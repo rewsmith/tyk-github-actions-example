@@ -6,8 +6,8 @@ jobs:
   Tyk-CICD-Demo:
     if: github.event.pull_request.merged == true
     env:
-      dashboard: https://mathematical-creature-adm.aws-use1.cloud-ara.tyk.io
-      dash_key: 2ab3e8d6e6554ccc50e020b3049201e1
+      dashboard: https://petite-officer-adm.aws-use1.cloud-ara.tyk.io
+      dash_key: a32fe347e32843ad61ab41ef0da21960
       repo: https://github.com/rewsmith/tyk-github-actions-example.git
     runs-on: ubuntu-18.04
     steps:
@@ -23,7 +23,7 @@ jobs:
           curl -s https://packagecloud.io/install/repositories/tyk/tyk-sync/script.deb.sh | sudo bash
       - name: Install Tyk Sync
         run: |
-          sudo apt-get install tyk-sync=1.2.1
+          sudo apt-get install tyk-sync=1.4.1
       - name: Run Tyk Sync
         run: |
           /opt/tyk-sync/tyk-sync sync -d="$dashboard" -s="$dash_key" $repo
