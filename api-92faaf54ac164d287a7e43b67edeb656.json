@@ -1,13 +1,13 @@
 {
   "api_definition": {
-    "id": "5ead7120575961000181867d",
-    "name": "Swagger Petstore",
-    "slug": "swagger-petstore",
+    "id": "655f185e890f730001adf63a",
+    "name": "Httpbin",
+    "slug": "",
     "listen_port": 0,
     "protocol": "",
     "enable_proxy_protocol": false,
-    "api_id": "42b615355eaf47ca617463503f43300b",
-    "org_id": "5e9d9544a1dcd60001d0ed20",
+    "api_id": "92faaf54ac164d287a7e43b67edeb656",
+    "org_id": "655f185e890f730001adf638",
     "use_keyless": false,
     "use_oauth2": false,
     "use_openid": false,
@@ -27,7 +27,7 @@
       "use_cookie": false,
       "cookie_name": "",
       "disable_header": false,
-      "auth_header_name": "Authorization",
+      "auth_header_name": "authorization",
       "use_certificate": false,
       "validate_signature": false,
       "signature": {
@@ -41,50 +41,7 @@
         "error_message": ""
       }
     },
-    "auth_configs": {
-      "authToken": {
-        "name": "",
-        "use_param": false,
-        "param_name": "",
-        "use_cookie": false,
-        "cookie_name": "",
-        "disable_header": false,
-        "auth_header_name": "Authorization",
-        "use_certificate": false,
-        "validate_signature": false,
-        "signature": {
-          "algorithm": "",
-          "header": "",
-          "use_param": false,
-          "param_name": "",
-          "secret": "",
-          "allowed_clock_skew": 0,
-          "error_code": 0,
-          "error_message": ""
-        }
-      },
-      "jwt": {
-        "name": "",
-        "use_param": false,
-        "param_name": "",
-        "use_cookie": false,
-        "cookie_name": "",
-        "disable_header": false,
-        "auth_header_name": "Authorization",
-        "use_certificate": false,
-        "validate_signature": false,
-        "signature": {
-          "algorithm": "",
-          "header": "",
-          "use_param": false,
-          "param_name": "",
-          "secret": "",
-          "allowed_clock_skew": 0,
-          "error_code": 0,
-          "error_message": ""
-        }
-      }
-    },
+    "auth_configs": {},
     "use_basic_auth": false,
     "basic_auth": {
       "disable_caching": false,
@@ -98,7 +55,7 @@
     "upstream_certificates": {},
     "pinned_public_keys": {},
     "enable_jwt": false,
-    "use_standard_auth": true,
+    "use_standard_auth": false,
     "use_go_plugin_auth": false,
     "enable_coprocess_auth": false,
     "custom_plugin_auth_enabled": false,
@@ -119,7 +76,7 @@
       "oauth_on_keychange_url": ""
     },
     "enable_signature_checking": false,
-    "hmac_allowed_clock_skew": -1,
+    "hmac_allowed_clock_skew": 0,
     "hmac_allowed_algorithms": [],
     "request_signing": {
       "is_enabled": false,
@@ -136,7 +93,7 @@
       "name": "",
       "default": "",
       "location": "header",
-      "key": "x-api-version",
+      "key": "",
       "strip_path": false,
       "strip_versioning_data": false,
       "versions": {}
@@ -153,7 +110,7 @@
             "white_list": [],
             "black_list": []
           },
-          "use_extended_paths": true,
+          "use_extended_paths": false,
           "extended_paths": {
             "persist_graphql": []
           },
@@ -181,7 +138,7 @@
           "target_path": "",
           "use_target_list": false,
           "cache_disabled": false,
-          "cache_timeout": 60,
+          "cache_timeout": 0,
           "endpoint_returns_list": false
         },
         "recheck_wait": 0
@@ -189,10 +146,10 @@
     },
     "proxy": {
       "preserve_host_header": false,
-      "listen_path": "/swagger-petstore",
-      "target_url": "http://swagger-petstore:8080/api/",
+      "listen_path": "/httpbin",
+      "target_url": "http://echo.tyk-demo.com:8080/trial",
       "disable_strip_slash": false,
-      "strip_listen_path": true,
+      "strip_listen_path": false,
       "enable_load_balancing": false,
       "target_list": [],
       "check_host_against_uptime_tests": false,
@@ -243,8 +200,8 @@
     "custom_middleware_bundle": "",
     "custom_middleware_bundle_disabled": false,
     "cache_options": {
-      "cache_timeout": 60,
-      "enable_cache": true,
+      "cache_timeout": 0,
+      "enable_cache": false,
       "cache_all_safe_requests": false,
       "cache_response_codes": [],
       "enable_upstream_cache_control": false,
@@ -267,8 +224,8 @@
     "event_handlers": {
       "events": {}
     },
-    "enable_batch_request_support": false,
-    "enable_ip_whitelisting": false,
+    "enable_batch_request_support": true,
+    "enable_ip_whitelisting": true,
     "allowed_ips": [],
     "enable_ip_blacklisting": false,
     "blacklisted_ips": [],
@@ -276,18 +233,13 @@
     "expire_analytics_after": 0,
     "response_processors": [],
     "CORS": {
-      "enable": true,
-      "allowed_origins": [
-        "http://localhost:3000",
-        "http://tyk-portal.localhost:3000"
-      ],
+      "enable": false,
+      "allowed_origins": [],
       "allowed_methods": [],
-      "allowed_headers": [
-        "*"
-      ],
+      "allowed_headers": [],
       "exposed_headers": [],
       "allow_credentials": false,
-      "max_age": 24,
+      "max_age": 0,
       "options_passthrough": false,
       "debug": false
     },
@@ -329,6 +281,7 @@
         "sdl": ""
       },
       "supergraph": {
+        "updated_at": "2023-11-23T09:16:14.264122Z",
         "subgraphs": [],
         "merged_sdl": "",
         "global_headers": {},
@@ -345,6 +298,16 @@
       "enabled": false,
       "providers": []
     }
+  },
+  "oas": {
+    "components": {},
+    "info": {
+      "contact": {},
+      "title": "",
+      "version": ""
+    },
+    "openapi": "",
+    "paths": null
   },
   "hook_references": [],
   "is_site": false,
